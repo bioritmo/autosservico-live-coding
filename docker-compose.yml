@@ -1,0 +1,18 @@
+services:
+  db:
+    image: postgres:14-alpine
+    volumes:
+      - ./db/01-create-table.sql:/docker-entrypoint-initdb.d/01-create-table.sql
+    environment:
+      POSTGRES_PASSWORD: 123456
+      POSTGRES_DB: app
+    ports:
+      - "5432:5432"
+  app:
+    build: .
+    volumes:
+      - .:/myapp
+    depends_on:
+      - db
+    stdin_open: true
+    tty: true

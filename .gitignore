@@ -1,0 +1,16 @@
+# Ignore bundler config
+.bundle
+
+# Ignore Editor files
+.idea/
+.vscode/
+
+# Ignore simplecov results
+coverage/
+
+# Ignore macOS specific files
+.DS_Store
+
+# Ignore log files and temp files
+log/
+tmp/
